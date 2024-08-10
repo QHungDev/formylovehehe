@@ -1,0 +1,85 @@
+﻿body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #FFD6E7;
+    font-family: Arial, sans-serif;
+    transition: background-image 1s ease; /* Thêm hiệu ứng chuyển đổi khi thay đổi hình nền */
+}
+
+.loading-container {
+    display: flex;
+    align-items: center;
+}
+
+.icon-left, .icon-right {
+    font-size: 24px;
+}
+
+.progress-bar {
+    position: relative;
+    width: 300px;
+    height: 20px;
+    background-color: #FFF;
+    border-radius: 10px;
+    margin: 0 10px;
+    overflow: hidden;
+    border: 2px solid #FF6B81;
+}
+
+.progress {
+    background-color: #FF6B81;
+    height: 100%;
+    width: 0%;
+    transition: width 0.4s ease;
+    position: relative;
+}
+
+.heart-icon {
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 18px;
+}
+
+.loading-text {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 16px;
+    color: #FF6B81;
+}
+
+#record-container {
+    display: none; /* Ẩn đi đĩa than ban đầu */
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#record {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-image: url('vinyl-record.png'); /* Đường dẫn tới hình ảnh đĩa than */
+    background-size: cover;
+    animation: spin 3s linear infinite; /* Hiệu ứng quay */
+}
+
+/* Hiệu ứng quay */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+audio {
+    display: none; /* Ẩn hoàn toàn thanh điều khiển âm thanh */
+}
